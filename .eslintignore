@@ -1,3 +1,2 @@
+.eslint.cjs
 node_modules
-.eslintrc.cjs
-dist
