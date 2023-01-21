@@ -1,9 +1,15 @@
+const root = document.getElementById('app') as HTMLElement;
 interface State {
-  text: string, 
-  description: string, 
-  comments?: string[];
+  id: string,
+  title: string
+  description: string
+  comments?: string[]
 }
+
+
+
 
 type Property = keyof State;
 
-export type {State, Property}
+export { root };
+export type { State, Property };

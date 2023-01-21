@@ -1,6 +1,6 @@
 import Card from "./Card";
+import Comment from "./Comment";
 import EditableText from "./EditableText";
-import ToDoList from "./ToDoList";
+import TodoList from "./TodoList";
 
-
-export { Card, ToDoList, EditableText}
+export {Card, Comment, EditableText, TodoList}

@@ -1,5 +1,5 @@
 {
-  "name": "todoooo",
+  "name": "trello-clone-v2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.30.0",
@@ -20,5 +21,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "typescript": "^4.9.4",
     "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "firebase": "^9.16.0",
+    "uuid": "^9.0.0"
   }
 }
