@@ -13,6 +13,7 @@
   <header id="header">
     <h1>TODO-Lister</h1>
     <p id="userEmail"></p>
+    <button id="logoutButton" hidden>Log Out</button>
 
   </header>
   <div class="wrapper">
@@ -38,7 +39,9 @@
     </div>
 
     <div id="app">
-      <button id="logoutButton" hidden>Log Out</button>
+      <div id="pendingInvitations">
+
+      </div>
 
       <div id="addTodoListDiv" hidden>
         <h1>To do lists</h1>
@@ -46,9 +49,7 @@
         <button id="addTodoListButton" class="btn-save">Add list</button>
       </div>
 
-      <div id="pendingInvitations">
 
-      </div>
 
       <div id="notificationContainer">
 
@@ -59,7 +60,7 @@
 
 
   </div>
-  <!-- <script src="/src/lib/loadBackgroundImage.ts"></script> -->
+  <script src="/src/lib/loadBackgroundImage.ts"></script>
   <script src="/src/lib/loginRegisterSwitch.ts"></script>
   <script defer type="module" src="/src/app.ts"></script>
 </body>
