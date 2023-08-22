@@ -8,7 +8,7 @@ export function displayNotification(message: string, type: 'success' | 'error' =
 
     notificationContainer.appendChild(notificationElement);
 
-    // Automatically remove the notification after a certain time (e.g., 5 seconds)
+    // Automatically remove the notification after a certain time
     setTimeout(() => {
       notificationElement.remove();
     }, 2500);

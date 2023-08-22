@@ -8,7 +8,7 @@ import firebaseConfig from '../lib/firebaseConfig';
 import { displayNotification } from '../lib/notificationUtils';
 
 // firestore
-import { getFirestore, deleteDoc, doc, updateDoc, arrayUnion, getDoc, addDoc, collection } from 'firebase/firestore';
+import { getFirestore, deleteDoc, doc, updateDoc, getDoc, addDoc, collection } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 
