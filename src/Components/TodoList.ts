@@ -7,6 +7,9 @@ import Card from './Card';
 import firebaseConfig from '../lib/firebaseConfig';
 import { displayNotification } from '../lib/notificationUtils';
 
+// firestore
+import { getFirestore, deleteDoc, doc, updateDoc, arrayUnion, getDoc, addDoc, collection } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 
 // Initialize Firebase
@@ -14,9 +17,7 @@ initializeApp(firebaseConfig);
 const auth = getAuth();
 console.log(auth);
 
-// firestore
-import { getFirestore, deleteDoc, doc, updateDoc, arrayUnion, getDoc, addDoc, collection } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+
 
 const firestore = getFirestore();
 
@@ -95,7 +96,6 @@ export default class TodoList {
       }
     }
   }
-
 
   async deleteListFirestore(): Promise<void> {
     try {

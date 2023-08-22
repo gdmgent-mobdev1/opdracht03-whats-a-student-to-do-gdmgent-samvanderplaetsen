@@ -13,6 +13,8 @@ import 'firebase/firestore';
 
 import firebaseConfig from '../lib/firebaseConfig';
 import { getAuth } from 'firebase/auth';
+import { displayNotification } from '../lib/notificationUtils';
+
 const firebaseApp = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseApp);
 const auth = getAuth();
@@ -102,7 +104,6 @@ export default class Card {
       // Remove from Firestore
       try {
         const todoListId = this.todoList.todoListElement?.id;
-        // console.log('todoListId', todoListId);
   
         // Get a reference to the todoList document
         const docRef = doc(firestore, 'todoLists', `${todoListId}`);
@@ -110,14 +111,11 @@ export default class Card {
         // Fetch the current todos array from Firestore
         const docSnapshot = await getDoc(docRef);
         const existingTodos = docSnapshot.data()?.todos || [];
-        // console.log('existingTodos', existingTodos);
 
         const cardId = this.card
-        // console.log('cardId', cardId);
 
         // get p element's value of the card
         const todoItemValue = this.p?.innerText;
-        // console.log('todoItemValue', todoItemValue);
 
         existingTodos.splice(existingTodos.indexOf(todoItemValue), 1);
 
@@ -126,13 +124,15 @@ export default class Card {
           todos: existingTodos,
         });
 
-        // Award points to the user
         this.updatePoints(10); // Award 10 points for completing a task
-        console.log('Points awarded to user');
+        displayNotification('10 points added successfully!', 'success');
 
-        console.log('Card successfully deleted from Firestore');
+        displayNotification('Card successfully deleted from Firestore', 'success');
+
       } catch (error) {
         console.error('Error deleting card from Firestore:', error);
+        displayNotification('An error occurred while deleting card from Firestore.', 'error');
+
       }
     }
   }
