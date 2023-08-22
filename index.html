@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <header id="header">
+    <h1>Epic todo list app</h1>
+    <ul>
+      <li><a href="#">ToDo-lists</a></li>
+      <li><a href="#">Invitations</a></li>
+    </ul>
+  </header>
+  <div class="wrapper">
+
+
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" class="input-field">
+      <input type="password" id="loginPassword" placeholder="Password" class="input-field">
+      <button id="loginButton">Log In</button>
+      <p>or</p>
+      <!-- <button id="registerButton">Register</button> -->
+      <button id="loginWithGoogle">Login with google</button>
+      <button id="goToRegister">No account yet? Go to register -></button>
+    </div>
+
+    <div id="registerForm">
+      <h2>Register</h2>
+
+      <input type="email" id="registerEmail" placeholder="Email" class="input-field">
+      <input type="password" id="registerPassword" placeholder="Password" class="input-field">
+      <!-- <button id="loginButton">Log In</button> -->
+      <button id="registerButton">Register</button>
+      <!-- <button id="loginWithGoogle">Login with google</button> -->
+      <button id="goToLogin">Already have an account? Go to login -></button>
+    </div>
+
+    <div id="app">
+      <p id="userEmail"></p> <!-- This element will display the user's email -->
+      <button id="logoutButton" hidden>Log Out</button>
+
+      <div id="addTodoListDiv" hidden>
+        <h1>To do lists</h1>
+        <input type="text" id="addTodoListInput" class="comment">
+        <button id="addTodoListButton" class="btn-save">Add list</button>
+      </div>
+
+    
+
+      <!-- hide when log out....................................... -->
+      <div id="pendingInvitations">
+        <!-- <h2>Invitations</h2> -->
+        <!-- Pending invitations will be displayed here -->
+      </div>
+
+      <div id="notificationContainer">
+        <!-- Notifications will be displayed here -->
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+
+  </div>
+  <script src="/src/lib/loadBackgroundImage.ts"></script>
+  <script src="/src/lib/loginRegisterSwitch.ts"></script>
+  <script defer type="module" src="/src/app.ts"></script>
+</body>
+
+</html>
